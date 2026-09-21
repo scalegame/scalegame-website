@@ -5,17 +5,40 @@ import { CustomCursor } from "@/components/common/CustomCursor";
 import { SmoothScroll } from "@/components/common/SmoothScroll";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://scalegame.digital"),
   title: "SCALE GAME — Digital Marketing & Growth Agency | We Play. You Win.",
   description:
     "We target your ideal audience, build authentic trust in your product, and convert engagement into high-value sales.",
   keywords: [
     "Scale Game",
+    "scalegame.digital",
     "Digital Marketing Agency",
     "Growth Agency",
     "Creative Agency",
     "Performance Marketing",
+    "AI Automation",
+    "Hospital CRMs",
+    "Brand Scaling",
   ],
   authors: [{ name: "Scale Game" }],
+  alternates: {
+    canonical: "https://scalegame.digital",
+  },
+  openGraph: {
+    title: "SCALE GAME — Digital Marketing & Growth Agency",
+    description:
+      "We target your ideal audience, build authentic trust in your product, and convert engagement into high-value sales.",
+    url: "https://scalegame.digital",
+    siteName: "SCALE GAME",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SCALE GAME — Digital Marketing & Growth Agency",
+    description:
+      "We target your ideal audience, build authentic trust in your product, and convert engagement into high-value sales.",
+  },
 };
 
 export const viewport: Viewport = {
