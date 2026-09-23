@@ -8,27 +8,30 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.75,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.25,
+      touchMultiplier: 1.5,
     });
 
     lenisRef.current = lenis;
+    (window as any).__lenis = lenis;
 
+    let animId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animId = requestAnimationFrame(raf);
     }
 
-    const animId = requestAnimationFrame(raf);
+    animId = requestAnimationFrame(raf);
 
     return () => {
       cancelAnimationFrame(animId);
       lenis.destroy();
+      (window as any).__lenis = null;
     };
   }, []);
 

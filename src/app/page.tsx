@@ -7,7 +7,6 @@ import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { ChooseGameSection } from "@/components/sections/ChooseGameSection";
 import { ServicesLevelsSection } from "@/components/sections/ServicesLevelsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { WorkSection } from "@/components/sections/WorkSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { Footer } from "@/components/Footer";
@@ -42,13 +41,10 @@ export default function Home() {
       {/* SECTION 05 — HOW WE THINK (PROCESS LOOP) */}
       <ProcessSection />
 
-      {/* SECTION 06 — WORK / INDUSTRIES WE'VE WORKED IN */}
-      <WorkSection />
-
-      {/* SECTION 07 — WHO WE WORK WITH (INDUSTRY TYPOGRAPHIC CLOUD) */}
+      {/* SECTION 06 — WHO WE WORK WITH (INDUSTRY TYPOGRAPHIC CLOUD) */}
       <IndustriesSection />
 
-      {/* SECTION 08 — FINAL EXPERIENCE (GET STARTED CTA) */}
+      {/* SECTION 07 — FINAL EXPERIENCE (GET STARTED CTA) */}
       <FinalCtaSection onOpenGameModal={() => setModalOpen(true)} />
 
       {/* FOOTER */}

@@ -29,14 +29,14 @@ export const IndustriesSection: React.FC = () => {
   return (
     <section
       id="industries"
-      className="relative w-full bg-[#050505] text-white py-14 sm:py-18 border-b border-white/10 overflow-hidden select-none"
+      className="relative w-full bg-[#050505] text-white py-10 sm:py-14 border-b border-white/10 overflow-hidden select-none"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         {/* Section Header Meta */}
         <div className="flex items-center gap-2 mb-3">
           <div className="w-2 h-2 bg-white" />
           <span className="font-mono text-xs uppercase tracking-widest text-white/50">
-            [SECTION 07 // FULL-MARKET CAPABILITY]
+            [SECTION 06 // FULL-MARKET CAPABILITY]
           </span>
         </div>
 

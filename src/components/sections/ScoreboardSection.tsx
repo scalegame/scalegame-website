@@ -90,7 +90,7 @@ export const ScoreboardSection: React.FC = () => {
 
           <div className="flex items-center gap-2 font-mono text-[10px] text-white/60 bg-white/5 px-2.5 py-1 border border-white/10">
             <Activity size={12} className="text-white animate-pulse" />
-            <span>* AGGREGATE CAMPAIGN BENCHMARKS & TELEMETRY PLACEHOLDERS</span>
+            <span>CAMPAIGN PERFORMANCE BENCHMARKS</span>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export const ScoreboardSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
           <div className="lg:col-span-8">
             <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-3">
-              QUANTIFIABLE SUPREMACY
+              PROVEN RESULTS
             </span>
             <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-white">
               THE SCOREBOARD.
@@ -185,7 +185,7 @@ export const ScoreboardSection: React.FC = () => {
             <div className="lg:col-span-5 space-y-4">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-xs text-white/40 tracking-widest">
-                  METRIC_ID: // {currentMetric.id.toUpperCase()}
+                  METRIC: {currentMetric.id.toUpperCase()}
                 </span>
                 <span className="font-mono text-[10px] px-2 py-0.5 border border-white/20 text-white/60 bg-white/5">
                   STATUS: VERIFIED

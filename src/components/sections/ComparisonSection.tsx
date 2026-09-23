@@ -43,7 +43,7 @@ export const ComparisonSection: React.FC = () => {
     {
       dimension: "EXECUTION SPEED",
       traditional: "Weeks of committee approvals, delayed feedback loops, and bureaucratic inertia.",
-      scaleGame: "Rapid testing sprints, daily creative iterations, and proactive optimization protocols.",
+      scaleGame: "Rapid testing sprints, daily creative iterations, and proactive campaign optimization.",
     },
   ];
 
@@ -76,7 +76,7 @@ export const ComparisonSection: React.FC = () => {
 
           <div className="lg:col-span-4">
             <p className="font-mono text-xs text-white/70 leading-relaxed uppercase tracking-wider">
-              The traditional agency model is obsolete. Stop paying retainers for hope. Start investing in engineered victory.
+              The traditional agency model is obsolete. Stop paying retainers for hope. Start investing in measurable, compounding growth.
             </p>
           </div>
         </div>

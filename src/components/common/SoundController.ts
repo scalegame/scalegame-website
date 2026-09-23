@@ -1,42 +1,23 @@
-// Audio Synthesizer Engine for Luxury UI Micro-Interactions (Zero external audio assets)
-
+// Audio Synthesizer Engine - Disabled per user preference for silent clean UX
 class SoundSystem {
-  private ctx: AudioContext | null = null;
   private enabled: boolean = false;
 
-  constructor() {
-    // Lazy initialize on first interaction
-  }
-
-  private initCtx() {
-    if (typeof window === "undefined") return null;
-    if (!this.ctx) {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (AudioCtx) {
-        this.ctx = new AudioCtx();
-      }
-    }
-    if (this.ctx && this.ctx.state === "suspended") {
-      this.ctx.resume();
-    }
-    return this.ctx;
-  }
-
-  public setEnabled(val: boolean) {
-    this.enabled = val;
-    if (typeof window !== "undefined") {
-      localStorage.setItem("sg_sound_enabled", val ? "true" : "false");
-    }
+  public setEnabled(_val: boolean) {
+    this.enabled = false;
   }
 
   public isEnabled(): boolean {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("sg_sound_enabled");
-      if (saved !== null) {
-        this.enabled = saved === "true";
-      }
+    return false;
+  }
+
+  private initCtx(): AudioContext | null {
+    if (typeof window === "undefined" || !this.enabled) return null;
+    try {
+      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      return AudioCtx ? new AudioCtx() : null;
+    } catch {
+      return null;
     }
-    return this.enabled;
   }
 
   // Tactile mechanical micro-click (sharp, subtle, expensive)

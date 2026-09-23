@@ -78,17 +78,6 @@ export const CustomCursor: React.FC = () => {
         }}
         transition={{ type: "spring", damping: 25, stiffness: 250, mass: 0.2 }}
       />
-
-      {/* Tiny Tactical Coordinate readout on hover */}
-      {isHovering && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, x: pos.x + 20, y: pos.y + 12 }}
-          className="fixed top-0 left-0 font-mono text-[9px] uppercase tracking-widest text-white/50"
-        >
-          [TARGET // ACQUIRED]
-        </motion.div>
-      )}
     </div>
   );
 };

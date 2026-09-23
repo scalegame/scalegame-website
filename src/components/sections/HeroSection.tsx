@@ -100,10 +100,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
           </span>
         </div>
 
-        <div className="flex items-center gap-6 font-mono text-[10px] text-white/40 tracking-wider">
-          <span className="hidden sm:inline-block">LOC: GLOBAL // HYPER-SCALE</span>
-          <span>LATENCY: 12ms</span>
-          <span className="text-white/80">TACTICAL_SYS: V4.8</span>
+        <div className="flex items-center gap-4 font-mono text-[11px] text-white/50 tracking-wider">
+          <span>GLOBAL REACH</span>
+          <span className="text-white/20">•</span>
+          <span className="text-emerald-400 font-medium">ACCEPTING CLIENTS</span>
         </div>
       </div>
 
@@ -153,7 +153,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
               onClick={onOpenGameModal}
               className="w-full sm:w-auto px-8 py-4 bg-white text-black font-mono text-xs font-bold tracking-widest uppercase hover:bg-neutral-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)]"
             >
-              INITIALIZE CAMPAIGN
+              GET STARTED
             </MagneticButton>
 
             <button
@@ -170,12 +170,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
 
       {/* Bottom Interface Bar & Tactical Scroll Indicator */}
       <div className="relative z-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-6 font-mono text-[11px] text-white/50">
-          <div className="flex items-center gap-2">
-            <Crosshair size={12} className="text-white/60 animate-spin" style={{ animationDuration: "12s" }} />
-            <span>GRID_STATUS: ACTIVE</span>
-          </div>
-          <span className="hidden md:inline-block">PROTOCOL: ASYMMETRIC DOMINANCE</span>
+        <div className="flex items-center gap-2 font-mono text-[11px] text-white/50">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>FULL-SERVICE DIGITAL GROWTH</span>
         </div>
 
         {/* Scroll Indicator */}

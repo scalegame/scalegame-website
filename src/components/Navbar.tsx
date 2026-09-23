@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, VolumeX, Menu, X, Terminal, ArrowUpRight } from "lucide-react";
+import { Menu, X, Terminal, ArrowUpRight } from "lucide-react";
 import { soundFx } from "./common/SoundController";
 import { MagneticButton } from "./common/MagneticButton";
 
@@ -11,33 +11,22 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
-  const [soundActive, setSoundActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setSoundActive(soundFx.isEnabled());
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleSound = () => {
-    const next = !soundActive;
-    soundFx.setEnabled(next);
-    setSoundActive(next);
-    if (next) soundFx.playClick();
-  };
 
   const navLinks = [
     { name: "METHODOLOGY", href: "#philosophy" },
     { name: "SERVICES", href: "#services" },
     { name: "PROCESS", href: "#process" },
-    { name: "WORK", href: "#work" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -46,7 +35,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
     setMobileMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const lenis = (window as any).__lenis;
+      if (lenis) {
+        lenis.scrollTo(element, { offset: -60, duration: 0.8 });
+      } else {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -134,19 +128,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
               </svg>
             </a>
 
-            {/* Audio Feedback Controller */}
-            <button
-              onClick={toggleSound}
-              className="flex items-center gap-2 px-2.5 py-1.5 border border-white/10 hover:border-white/30 bg-black/50 text-white/60 hover:text-white transition-all text-xs font-mono"
-              title={soundActive ? "SFX Enabled" : "SFX Muted"}
-              data-cursor="interactive"
-            >
-              {soundActive ? <Volume2 size={13} className="text-white" /> : <VolumeX size={13} />}
-              <span className="text-[10px] tracking-widest">
-                SFX:{soundActive ? "ON" : "OFF"}
-              </span>
-            </button>
-
             {/* Magnetic CTA Button */}
             <MagneticButton
               onClick={onOpenGameModal}
@@ -162,17 +143,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
           {/* Mobile Menu Toggle Button */}
           <div className="flex sm:hidden items-center gap-2">
             <button
-              onClick={toggleSound}
-              className="p-2 border border-white/15 bg-black text-white/70"
-            >
-              {soundActive ? <Volume2 size={15} /> : <VolumeX size={15} />}
-            </button>
-            <button
               onClick={() => {
-                soundFx.playClick();
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               className="p-2 border border-white/20 bg-black text-white"
+              aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>

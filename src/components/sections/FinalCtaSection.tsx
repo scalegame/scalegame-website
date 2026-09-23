@@ -14,7 +14,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenGameModa
   return (
     <section
       id="final-cta"
-      className="relative w-full min-h-[70vh] sm:min-h-[80vh] bg-[#050505] text-white flex flex-col justify-between py-14 sm:py-20 px-6 sm:px-12 border-b border-white/10 select-none overflow-hidden"
+      className="relative w-full min-h-[60vh] bg-[#050505] text-white flex flex-col justify-between py-10 sm:py-14 px-6 sm:px-12 select-none overflow-hidden"
     >
       {/* Background Ambience: Subtle Radial Spotlight */}
       <div className="absolute inset-0 pointer-events-none">
@@ -27,13 +27,13 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenGameModa
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-white" />
           <span className="font-mono text-xs uppercase tracking-tactical text-white/50">
-            [SECTION 08 // GET STARTED]
+            [SECTION 07 // GET STARTED]
           </span>
         </div>
 
-        <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 tracking-wider">
-          <Crosshair size={12} className="text-white/60" />
-          <span>MATCH STATUS: READY FOR DISPATCH</span>
+        <div className="flex items-center gap-2 font-mono text-[10px] text-white/50 tracking-wider">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>STATUS: ACCEPTING CLIENTS</span>
         </div>
       </div>
 
@@ -110,12 +110,6 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenGameModa
         <p className="mt-8 font-mono text-xs text-white/50 tracking-wider">
           LIMITED CLIENT CAPACITY // HIGH-TOUCH QUARTERLY ENGAGEMENTS
         </p>
-      </div>
-
-      {/* Bottom Meta */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-white/40">
-        <div>SCALE GAME // DIGITAL MARKETING AGENCY</div>
-        <div>ALL RIGHTS RESERVED // 2026</div>
       </div>
     </section>
   );

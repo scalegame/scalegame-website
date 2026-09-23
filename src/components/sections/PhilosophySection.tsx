@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Eye, Flame, ShieldCheck, MousePointerClick, TrendingUp } from "lucide-react";
 import { soundFx } from "../common/SoundController";
 
@@ -74,20 +74,11 @@ const PROGRESSION_STAGES = [
 ];
 
 export const PhilosophySection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeStage, setActiveStage] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const progressHeight = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "100%"]);
 
   return (
     <section
       id="philosophy"
-      ref={containerRef}
       className="relative w-full bg-[#050505] text-white py-14 sm:py-20 px-6 sm:px-12 border-b border-white/10 overflow-hidden"
     >
       {/* Background Ambience */}
@@ -204,7 +195,7 @@ export const PhilosophySection: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                     <span className="font-mono text-[11px] uppercase tracking-widest text-white/60">
-                      STAGE TELEMETRY // {PROGRESSION_STAGES[activeStage].title}
+                      STAGE OVERVIEW // {PROGRESSION_STAGES[activeStage].title}
                     </span>
                   </div>
                   <span className="font-mono text-[10px] text-white/40">PHASE 0{activeStage + 1}</span>
