@@ -104,7 +104,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
         {/* Pre-Headline Pill */}
         <div className="inline-flex items-center gap-2 mb-4 self-start">
           <span className="px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 font-mono text-xs uppercase tracking-widest font-semibold">
-            DIGITAL MARKETING AGENCY • TAMIL NADU
+            SCALE GAME • BEST DIGITAL MARKETING AGENCY • TAMIL NADU
           </span>
         </div>
 
@@ -121,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
               YOU WIN.
             </span>
             <span className="sr-only">
-              — Performance Digital Marketing Agency in Karaikudi & Tamil Nadu
+              Scale Game (scalegame) — Best Performance Digital Marketing Agency in Karaikudi & Tamil Nadu
             </span>
           </motion.h1>
         </div>
