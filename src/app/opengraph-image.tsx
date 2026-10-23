@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 
-export const alt = 'SCALE GAME — Digital Marketing & Growth Agency';
+export const alt = 'Scale Game — Digital Marketing Agency in Tamil Nadu | Performance, Meta & Google Ads';
 export const size = {
   width: 1200,
   height: 630,
@@ -52,7 +52,7 @@ export default async function Image() {
                 fontFamily: 'monospace',
               }}
             >
-              SCALE GAME // DIGITAL MARKETING & GROWTH AGENCY
+              SCALE GAME // DIGITAL MARKETING AGENCY • TAMIL NADU
             </span>
           </div>
           <span
@@ -63,7 +63,7 @@ export default async function Image() {
               fontFamily: 'monospace',
             }}
           >
-            scalegame.digital
+            www.scalegame.digital
           </span>
         </div>
 

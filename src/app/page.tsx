@@ -6,7 +6,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { ChooseGameSection } from "@/components/sections/ChooseGameSection";
 import { ServicesLevelsSection } from "@/components/sections/ServicesLevelsSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { Footer } from "@/components/Footer";
@@ -22,29 +21,26 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen w-full bg-[#050505] text-white flex flex-col">
+    <main className="relative min-h-screen w-full bg-white text-zinc-900 flex flex-col">
       {/* Floating Tactical Navigation */}
       <Navbar onOpenGameModal={() => setModalOpen(true)} />
 
       {/* SECTION 01 — HERO */}
       <HeroSection onOpenGameModal={() => setModalOpen(true)} />
 
-      {/* SECTION 02 — THE GAME (PHILOSOPHY) */}
-      <PhilosophySection />
-
-      {/* SECTION 03 — WHAT WE ACTUALLY DO (CHOOSE YOUR GAME) */}
-      <ChooseGameSection onSelectObjective={handleOpenModalWithObjective} />
-
-      {/* SECTION 04 — SERVICES / 9-LEVEL PROGRESSION SYSTEM */}
+      {/* SECTION 02 — SERVICES / PROGRESSION SYSTEM */}
       <ServicesLevelsSection />
 
-      {/* SECTION 05 — HOW WE THINK (PROCESS LOOP) */}
-      <ProcessSection />
+      {/* SECTION 03 — WHAT WE ACTUALLY DO (CHOOSE YOUR GAME / GOALS) */}
+      <ChooseGameSection onSelectObjective={handleOpenModalWithObjective} />
 
-      {/* SECTION 06 — WHO WE WORK WITH (INDUSTRY TYPOGRAPHIC CLOUD) */}
+      {/* SECTION 04 — GROWTH METHODOLOGY (PHILOSOPHY) */}
+      <PhilosophySection />
+
+      {/* SECTION 05 — WHO WE WORK WITH (INDUSTRY CLOUD) */}
       <IndustriesSection />
 
-      {/* SECTION 07 — FINAL EXPERIENCE (GET STARTED CTA) */}
+      {/* SECTION 06 — FINAL EXPERIENCE (GET STARTED CTA) */}
       <FinalCtaSection onOpenGameModal={() => setModalOpen(true)} />
 
       {/* FOOTER */}

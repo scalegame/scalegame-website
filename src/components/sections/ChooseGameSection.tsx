@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { soundFx } from "../common/SoundController";
 import { MagneticButton } from "../common/MagneticButton";
 
@@ -103,15 +103,15 @@ const GOALS = [
   },
 ];
 
-// Small, Smooth Vector Animatic Icons for each Goal Box
+// Clean Vector Animatic Icons for each Goal Box
 const GoalAnimaticIcon: React.FC<{ id: string; isSelected: boolean }> = ({ id, isSelected }) => {
-  const colorClass = isSelected ? "text-black" : "text-white/70 group-hover:text-white";
+  const colorClass = isSelected ? "text-white" : "text-zinc-800 group-hover:text-zinc-950";
 
   return (
-    <div className={`w-8 h-8 flex items-center justify-start my-1.5 transition-colors duration-200 ${colorClass}`}>
+    <div className={`w-8 h-8 flex items-center justify-start my-2 transition-colors duration-200 ${colorClass}`}>
       {id === "awareness" && (
         <svg viewBox="0 0 40 40" className="w-7 h-7 stroke-current fill-none stroke-[2]">
-          <circle cx="20" cy="20" r="14" strokeDasharray="3 3" opacity="0.5" />
+          <circle cx="20" cy="20" r="14" strokeDasharray="3 3" opacity="0.4" />
           <circle cx="20" cy="20" r="8" />
           <circle cx="20" cy="20" r="3" fill="currentColor" />
         </svg>
@@ -121,7 +121,7 @@ const GoalAnimaticIcon: React.FC<{ id: string; isSelected: boolean }> = ({ id, i
         <svg viewBox="0 0 40 40" className="w-7 h-7 stroke-current fill-none stroke-[2]">
           <circle cx="20" cy="28" r="3" fill="currentColor" />
           <path d="M 12 20 Q 20 12 28 20" />
-          <path d="M 6 12 Q 20 0 34 12" strokeDasharray="3 3" opacity="0.6" />
+          <path d="M 6 12 Q 20 0 34 12" strokeDasharray="3 3" opacity="0.5" />
           <line x1="20" y1="28" x2="20" y2="35" strokeWidth="2" />
         </svg>
       )}
@@ -138,22 +138,25 @@ const GoalAnimaticIcon: React.FC<{ id: string; isSelected: boolean }> = ({ id, i
       {id === "engagement" && (
         <svg viewBox="0 0 40 40" className="w-7 h-7 stroke-current fill-none stroke-[2]">
           <path d="M 8 10 H 32 C 34 10 35 11 35 13 V 24 C 35 26 34 27 32 27 H 16 L 8 33 V 27 C 6 27 5 26 5 24 V 13 C 5 11 6 10 8 10 Z" />
-          <path d="M 12 17 H 28 M 12 21 H 20" strokeWidth="1.5" opacity="0.7" />
+          <circle cx="14" cy="19" r="1.5" fill="currentColor" />
+          <circle cx="20" cy="19" r="1.5" fill="currentColor" />
+          <circle cx="26" cy="19" r="1.5" fill="currentColor" />
         </svg>
       )}
 
       {id === "leads" && (
         <svg viewBox="0 0 40 40" className="w-7 h-7 stroke-current fill-none stroke-[2]">
-          <path d="M 6 8 L 34 8 L 24 22 V 32 L 16 35 V 22 Z" />
-          <circle cx="20" cy="8" r="2" fill="currentColor" />
+          <path d="M 10 12 L 20 6 L 30 12 L 20 18 Z" />
+          <path d="M 10 20 L 20 26 L 30 20" />
+          <path d="M 10 28 L 20 34 L 30 28" />
         </svg>
       )}
 
       {id === "sales" && (
         <svg viewBox="0 0 40 40" className="w-7 h-7 stroke-current fill-none stroke-[2]">
-          <path d="M 6 30 L 14 20 L 22 24 L 34 8" strokeWidth="2.5" />
-          <polyline points="24,8 34,8 34,18" strokeWidth="2.5" />
-          <line x1="6" y1="34" x2="34" y2="34" strokeWidth="1.5" opacity="0.4" />
+          <path d="M 6 8 H 11 L 15 24 H 30 L 33 12 H 13" />
+          <circle cx="17" cy="30" r="2.5" fill="currentColor" />
+          <circle cx="28" cy="30" r="2.5" fill="currentColor" />
         </svg>
       )}
     </div>
@@ -167,29 +170,32 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
   return (
     <section
       id="choose-game"
-      className="relative w-full bg-[#050505] text-white py-14 sm:py-20 px-6 sm:px-12 border-b border-white/10"
+      className="relative w-full bg-white text-zinc-900 py-20 sm:py-28 px-6 sm:px-12 border-b border-zinc-200/80 overflow-hidden"
     >
+      {/* Subtle Background Grid Pattern */}
+      <div className="absolute inset-0 bg-tactical-grid opacity-40 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Simple Section Header */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-2 h-2 bg-white" />
-          <span className="font-mono text-xs uppercase tracking-widest text-white/50">
-            [SECTION 03 // GOAL SELECTION]
+        {/* Section Header */}
+        <div className="inline-flex items-center gap-2 mb-3">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">
+            GOAL SELECTION
           </span>
         </div>
 
         {/* Clean Header */}
-        <div className="max-w-3xl mb-6 sm:mb-8">
-          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+        <div className="max-w-3xl mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-zinc-950 leading-tight">
             WHAT IS YOUR MAIN GOAL?
           </h2>
-          <p className="mt-2 font-sans text-sm sm:text-base text-white/60">
-            Select the goal you want to achieve for your business.
+          <p className="mt-2.5 font-sans text-sm sm:text-base text-zinc-600">
+            Select the primary objective you want to achieve for your business.
           </p>
         </div>
 
-        {/* Clean 6-Card Grid with Animatic Icons */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+        {/* Clean 6-Card Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
           {GOALS.map((goal, idx) => {
             const isSelected = goal.id === selectedGoalId;
             return (
@@ -201,37 +207,37 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
                 }}
                 onMouseEnter={() => soundFx.playHover()}
                 data-cursor="interactive"
-                className={`group text-left p-4 border transition-all duration-200 flex flex-col justify-between min-h-[160px] ${
+                className={`group text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between min-h-[170px] ${
                   isSelected
-                    ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-                    : "bg-[#0a0a0a] text-white/70 border-white/10 hover:border-white/30 hover:text-white"
+                    ? "bg-zinc-950 text-white border-zinc-950 shadow-xl shadow-zinc-950/15 scale-[1.02]"
+                    : "bg-zinc-50/80 text-zinc-700 border-zinc-200/80 hover:border-zinc-400 hover:bg-zinc-100/60 shadow-xs"
                 }`}
               >
                 <div className="flex items-center justify-between w-full mb-1">
                   <span
-                    className={`font-mono text-[10px] tracking-widest ${
-                      isSelected ? "text-black/60 font-bold" : "text-white/30"
+                    className={`font-mono text-xs tracking-wider font-semibold ${
+                      isSelected ? "text-zinc-400" : "text-zinc-400"
                     }`}
                   >
                     0{idx + 1}
                   </span>
-                  {isSelected && <div className="w-1.5 h-1.5 bg-black rounded-full" />}
+                  {isSelected && <div className="w-2 h-2 bg-emerald-400 rounded-full" />}
                 </div>
 
-                {/* Smooth Vector Animatic Icon */}
+                {/* Vector Animatic Icon */}
                 <GoalAnimaticIcon id={goal.id} isSelected={isSelected} />
 
                 <div>
                   <h3
                     className={`font-mono text-xs sm:text-sm font-bold tracking-tight uppercase leading-snug ${
-                      isSelected ? "text-black" : "text-white"
+                      isSelected ? "text-white" : "text-zinc-950"
                     }`}
                   >
                     {goal.title}
                   </h3>
                   <span
-                    className={`font-mono text-[9px] block mt-1 tracking-wider uppercase ${
-                      isSelected ? "text-black/70" : "text-white/40"
+                    className={`font-mono text-[10px] block mt-1 tracking-wider uppercase font-semibold ${
+                      isSelected ? "text-zinc-300" : "text-zinc-500"
                     }`}
                   >
                     {goal.tag}
@@ -242,47 +248,50 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
           })}
         </div>
 
-        {/* Clean Goal Details Box */}
+        {/* Goal Details Showcase Box */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentGoal.id}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="p-6 sm:p-10 border border-white/15 bg-[#090909] relative"
+            transition={{ duration: 0.25 }}
+            className="p-6 sm:p-10 rounded-3xl border border-zinc-200 bg-[#F8FAFC] shadow-lg shadow-zinc-900/[0.03] relative"
           >
             {/* Top Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4 mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-200/80 pb-4 mb-6">
               <div className="flex items-center gap-2">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-white">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-950">
                   SELECTED: {currentGoal.title}
                 </span>
               </div>
-              <div className="font-mono text-xs text-white/50">
-                ESTIMATED TIMELINE: <span className="text-white font-bold">{currentGoal.timeline}</span>
+              <div className="font-mono text-xs text-zinc-500">
+                ESTIMATED TIMELINE:{" "}
+                <span className="text-zinc-950 font-bold bg-white px-2.5 py-0.5 rounded-full border border-zinc-200 shadow-2xs">
+                  {currentGoal.timeline}
+                </span>
               </div>
             </div>
 
             {/* Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left Column: Simple Description & Outcome */}
+              {/* Left Column: Description & Outcome */}
               <div className="lg:col-span-7 space-y-5">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-1">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 block mb-1 font-semibold">
                     HOW WE HELP
                   </span>
-                  <p className="font-sans text-base sm:text-lg text-white/85 leading-relaxed">
+                  <p className="font-sans text-base sm:text-lg text-zinc-800 leading-relaxed font-normal">
                     {currentGoal.description}
                   </p>
                 </div>
 
-                <div className="p-4 border border-white/10 bg-black/60">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-1">
+                <div className="p-4 sm:p-5 rounded-2xl border border-emerald-200 bg-emerald-50/60 shadow-2xs">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-700 block mb-1.5 font-bold">
                     EXPECTED OUTCOME
                   </span>
-                  <div className="flex items-center gap-2 font-sans text-sm sm:text-base text-white">
-                    <Check size={16} className="text-white shrink-0" />
+                  <div className="flex items-center gap-2.5 font-sans text-sm sm:text-base text-emerald-950 font-medium">
+                    <Check size={18} className="text-emerald-600 shrink-0" />
                     <span>{currentGoal.expectedOutcome}</span>
                   </div>
                 </div>
@@ -291,7 +300,7 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
               {/* Right Column: Deliverables & Action */}
               <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2.5">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 block mb-2.5 font-semibold">
                     WHAT WE DELIVER
                   </span>
 
@@ -299,12 +308,12 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
                     {currentGoal.deliverables.map((item, i) => (
                       <div
                         key={i}
-                        className="flex items-center justify-between p-3 border border-white/10 bg-black/40"
+                        className="flex items-center justify-between p-3.5 rounded-xl border border-zinc-200 bg-white shadow-2xs"
                       >
-                        <span className="font-sans text-xs sm:text-sm font-medium text-white">
+                        <span className="font-sans text-xs sm:text-sm font-semibold text-zinc-800">
                           {item.name}
                         </span>
-                        <span className="font-mono text-[10px] text-white/40">
+                        <span className="font-mono text-[10px] text-zinc-400 font-medium">
                           {item.tag}
                         </span>
                       </div>
@@ -317,9 +326,10 @@ export const ChooseGameSection: React.FC<ChooseGameSectionProps> = ({ onSelectOb
                     soundFx.playClick();
                     onSelectObjective(currentGoal.title);
                   }}
-                  className="w-full py-3.5 bg-white text-black font-mono text-xs font-bold tracking-widest uppercase hover:bg-neutral-200 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl bg-zinc-950 text-white font-mono text-xs font-bold tracking-widest uppercase hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 shadow-md shadow-zinc-950/15"
                 >
-                  START WITH THIS GOAL →
+                  <span>START WITH THIS GOAL</span>
+                  <ArrowRight size={14} />
                 </MagneticButton>
               </div>
             </div>

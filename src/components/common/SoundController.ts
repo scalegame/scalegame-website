@@ -103,6 +103,10 @@ class SoundSystem {
     }
   }
 
+  public playLevelUp() {
+    this.playLevelUnlock();
+  }
+
   // Deep resonant game launch sweep
   public playGameStart() {
     if (!this.enabled) return;

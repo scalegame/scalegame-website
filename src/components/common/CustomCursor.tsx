@@ -54,9 +54,9 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[100] overflow-hidden transition-opacity duration-300">
-      {/* Precision Center Crosshair Dot */}
+      {/* Precision Center Dot */}
       <motion.div
-        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-white"
+        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-zinc-900"
         animate={{
           x: pos.x - 3,
           y: pos.y - 3,
@@ -65,15 +65,15 @@ export const CustomCursor: React.FC = () => {
         transition={{ type: "spring", damping: 30, stiffness: 450, mass: 0.1 }}
       />
 
-      {/* Outer Tactical Reticle / Ring */}
+      {/* Outer Reticle / Ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-white/40"
+        className="fixed top-0 left-0 rounded-full border border-zinc-900/30"
         animate={{
           x: pos.x - (isHovering ? 24 : 14),
           y: pos.y - (isHovering ? 24 : 14),
           width: isHovering ? 48 : 28,
           height: isHovering ? 48 : 28,
-          borderColor: isHovering ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.25)",
+          borderColor: isHovering ? "rgba(9, 9, 11, 0.85)" : "rgba(9, 9, 11, 0.25)",
           scale: isClicking ? 0.85 : 1,
         }}
         transition={{ type: "spring", damping: 25, stiffness: 250, mass: 0.2 }}

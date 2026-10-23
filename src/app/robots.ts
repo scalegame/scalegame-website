@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://scalegame.digital/sitemap.xml',
+    sitemap: 'https://www.scalegame.digital/sitemap.xml',
   };
 }

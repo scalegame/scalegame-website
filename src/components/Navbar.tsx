@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { soundFx } from "./common/SoundController";
 import { MagneticButton } from "./common/MagneticButton";
 
@@ -11,12 +11,12 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -24,9 +24,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
   }, []);
 
   const navLinks = [
-    { name: "METHODOLOGY", href: "#philosophy" },
     { name: "SERVICES", href: "#services" },
-    { name: "PROCESS", href: "#process" },
+    { name: "METHODOLOGY", href: "#philosophy" },
+    { name: "INDUSTRIES", href: "#industries" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -49,8 +49,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "py-3 bg-[#050505]/85 backdrop-blur-md border-b border-white/10"
-            : "py-6 bg-transparent"
+            ? "py-3 bg-white/85 backdrop-blur-md border-b border-zinc-200/80 shadow-sm"
+            : "py-5 bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
@@ -64,29 +64,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
             className="group flex items-center gap-3 select-none"
             data-cursor="interactive"
           >
-            <div className="relative w-8 h-8 flex items-center justify-center border border-white/20 bg-black/60 group-hover:border-white transition-colors duration-300">
-              <span className="font-mono text-xs font-black tracking-tighter text-white">SG</span>
-              <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+            <div className="relative w-8 h-8 rounded-lg flex items-center justify-center bg-zinc-950 text-white shadow-md group-hover:scale-105 transition-transform duration-200">
+              <span className="font-mono text-xs font-black tracking-tighter">SG</span>
+              <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full ring-2 ring-white animate-pulse" />
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-sm tracking-widest font-black uppercase text-white group-hover:text-white/80 transition-colors">
+              <span className="font-sans text-sm tracking-tight font-black uppercase text-zinc-950 group-hover:text-zinc-700 transition-colors">
                 SCALE GAME
               </span>
-              <span className="font-mono text-[9px] text-white/40 tracking-wider">
-                AGENCY // V.2.6
+              <span className="font-mono text-[9px] text-zinc-500 tracking-wider">
+                DIGITAL GROWTH AGENCY
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 border border-white/10 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-1 border border-zinc-200/80 bg-zinc-100/70 px-3 py-1.5 rounded-full backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 onMouseEnter={() => soundFx.playHover()}
-                className="font-mono text-xs text-white/60 hover:text-white px-3 py-1.5 rounded-full transition-colors duration-200 tracking-wider"
+                className="font-mono text-xs text-zinc-600 hover:text-zinc-950 px-3.5 py-1.5 rounded-full transition-colors duration-200 tracking-wider font-semibold"
                 data-cursor="interactive"
               >
                 {link.name}
@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
               rel="noopener noreferrer"
               onClick={() => soundFx.playClick()}
               onMouseEnter={() => soundFx.playHover()}
-              className="p-2 border border-white/10 hover:border-emerald-400/80 bg-black/50 text-white/70 hover:text-emerald-400 transition-all rounded"
+              className="p-2 border border-zinc-200 hover:border-emerald-500 bg-white hover:bg-emerald-50/50 text-zinc-600 hover:text-emerald-600 transition-all rounded-lg shadow-sm"
               title="Chat on WhatsApp (+91 93605 12623)"
               data-cursor="interactive"
             >
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
               rel="noopener noreferrer"
               onClick={() => soundFx.playClick()}
               onMouseEnter={() => soundFx.playHover()}
-              className="p-2 border border-white/10 hover:border-pink-400/80 bg-black/50 text-white/70 hover:text-pink-400 transition-all rounded"
+              className="p-2 border border-zinc-200 hover:border-pink-500 bg-white hover:bg-pink-50/50 text-zinc-600 hover:text-pink-600 transition-all rounded-lg shadow-sm"
               title="Follow on Instagram (@scale.game)"
               data-cursor="interactive"
             >
@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
             {/* Magnetic CTA Button */}
             <MagneticButton
               onClick={onOpenGameModal}
-              className="px-5 py-2 border border-white bg-white text-black font-mono text-xs font-bold tracking-widest uppercase hover:bg-black hover:text-white hover:border-white transition-all duration-300"
+              className="px-5 py-2.5 rounded-full bg-zinc-950 text-white font-mono text-xs font-bold tracking-wider uppercase hover:bg-zinc-800 transition-all duration-300 shadow-md shadow-zinc-950/15"
             >
               <span className="flex items-center gap-1.5">
                 LET&apos;S WORK
@@ -146,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
               onClick={() => {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
-              className="p-2 border border-white/20 bg-black text-white"
+              className="p-2 rounded-lg border border-zinc-200 bg-white text-zinc-900 shadow-sm"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -162,21 +162,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 bg-black/95 backdrop-blur-2xl flex flex-col pt-24 px-8 sm:hidden border-b border-white/10"
+            className="fixed inset-0 z-30 bg-white/98 backdrop-blur-2xl flex flex-col pt-24 px-8 sm:hidden border-b border-zinc-200"
           >
             <div className="flex flex-col gap-6 my-auto">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 pb-2 border-b border-white/10">
-                NAVIGATION MATRIX
+              <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 pb-2 border-b border-zinc-200">
+                NAVIGATION
               </div>
               {navLinks.map((link, idx) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="flex items-baseline justify-between font-mono text-2xl font-bold tracking-tight text-white/80 hover:text-white border-b border-white/5 pb-3"
+                  className="flex items-baseline justify-between font-sans text-2xl font-bold tracking-tight text-zinc-800 hover:text-zinc-950 border-b border-zinc-100 pb-3"
                 >
                   <span>{link.name}</span>
-                  <span className="font-mono text-xs text-white/30">0{idx + 1}</span>
+                  <span className="font-mono text-xs text-zinc-400">0{idx + 1}</span>
                 </a>
               ))}
             </div>
@@ -187,14 +187,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
                   setMobileMenuOpen(false);
                   onOpenGameModal();
                 }}
-                className="w-full py-3.5 bg-white text-black font-mono text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-zinc-950 text-white font-mono text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2 shadow-lg"
               >
                 LET&apos;S WORK
                 <ArrowUpRight size={16} />
               </button>
-              <div className="flex items-center justify-between text-[10px] font-mono text-white/40">
-                <span>SCALE GAME AGENCY</span>
-                <span>SYS.READY // 2026</span>
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                <span>SCALE GAME DIGITAL</span>
+                <span>KARAIKUDI, TAMIL NADU</span>
               </div>
             </div>
           </motion.div>
