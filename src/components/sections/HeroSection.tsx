@@ -45,7 +45,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-white text-zinc-900 pt-28 pb-10 px-6 sm:px-12 select-none border-b border-zinc-200/80"
+      className="relative min-h-[85vh] lg:min-h-[90vh] w-full flex flex-col justify-between overflow-hidden bg-white text-zinc-900 pt-20 sm:pt-24 pb-6 px-6 sm:px-12 select-none border-b border-zinc-200/80"
     >
       {/* Background: Soft luminous ambience + fine grid */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
         <div className="flex items-center gap-2.5">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 font-semibold">
-            SCALE GAME • PERFORMANCE DIGITAL MARKETING
+            PERFORMANCE DIGITAL MARKETING
           </span>
         </div>
 
@@ -99,12 +99,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
       {/* Center Zone: Monumental Typography & Editorial Brand Statement */}
       <motion.div
         style={{ y: yText, opacity }}
-        className="relative z-10 my-auto py-8 sm:py-12 flex flex-col justify-center max-w-7xl mx-auto w-full"
+        className="relative z-10 my-auto py-3 sm:py-6 flex flex-col justify-center max-w-7xl mx-auto w-full"
       >
         {/* Pre-Headline Pill */}
-        <div className="inline-flex items-center gap-2 mb-4 self-start">
+        <div className="inline-flex items-center gap-2 mb-3 self-start">
           <span className="px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 font-mono text-xs uppercase tracking-widest font-semibold">
-            SCALE GAME • BEST DIGITAL MARKETING AGENCY • TAMIL NADU
+            GROWTH MARKETING & STRATEGY • TAMIL NADU
           </span>
         </div>
 
@@ -131,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-          className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-end"
+          className="mt-5 sm:mt-7 grid grid-cols-1 md:grid-cols-12 gap-6 items-end"
         >
           <div className="md:col-span-7 space-y-3">
             <p className="font-sans text-xl sm:text-2xl md:text-3xl font-normal text-zinc-900 tracking-tight leading-snug">
@@ -163,7 +163,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGameModal }) => 
       </motion.div>
 
       {/* Bottom Bar & Smooth Scroll Indicator */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-6 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-3.5 border-t border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2 font-mono text-xs text-zinc-500">
           <span className="w-2 h-2 rounded-full bg-emerald-500" />
           <span>FULL-SERVICE GROWTH ARCHITECTURE</span>

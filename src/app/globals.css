@@ -91,3 +91,24 @@ body {
   background-color: #09090b;
   color: #ffffff;
 }
+
+/* Smooth continuous marquee track with hover pause */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 36s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+

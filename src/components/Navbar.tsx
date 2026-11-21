@@ -27,6 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGameModal }) => {
     { name: "SERVICES", href: "#services" },
     { name: "METHODOLOGY", href: "#philosophy" },
     { name: "INDUSTRIES", href: "#industries" },
+    { name: "CLIENTS", href: "#clients" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

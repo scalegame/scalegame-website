@@ -29,11 +29,11 @@ export const IndustriesSection: React.FC = () => {
   return (
     <section
       id="industries"
-      className="relative w-full bg-[#F8FAFC] text-zinc-900 py-16 sm:py-24 border-b border-zinc-200/80 overflow-hidden select-none"
+      className="relative w-full bg-[#F8FAFC] text-zinc-900 py-8 sm:py-12 border-b border-zinc-200/80 overflow-hidden select-none"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         {/* Section Header Meta */}
-        <div className="inline-flex items-center gap-2 mb-3">
+        <div className="inline-flex items-center gap-2 mb-2.5">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">
             MARKET ADAPTABILITY
@@ -41,7 +41,7 @@ export const IndustriesSection: React.FC = () => {
         </div>
 
         {/* Section Headline */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8 sm:mb-12 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-5 sm:mb-7 items-end">
           <div className="lg:col-span-8">
             <span className="font-mono text-xs text-zinc-400 uppercase tracking-widest block mb-2 font-semibold">
               UNIVERSAL EXECUTION CAPABILITY
@@ -103,7 +103,7 @@ export const IndustriesSection: React.FC = () => {
       </div>
 
       {/* Clean Bottom Note */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 mt-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 mt-4 sm:mt-5">
         <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest text-center font-medium">
           NO MATTER YOUR INDUSTRY, WE ADAPT OUR STRATEGY TO WIN IN YOUR EXACT SPACE.
         </p>

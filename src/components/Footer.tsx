@@ -36,13 +36,13 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-zinc-50 text-zinc-600 py-10 sm:py-12 px-6 sm:px-12 border-t border-zinc-200/80 select-none relative overflow-hidden">
+    <footer className="w-full bg-zinc-50 text-zinc-600 py-7 sm:py-9 px-6 sm:px-12 border-t border-zinc-200/80 select-none relative overflow-hidden">
       {/* Subtle Ambient Grid */}
       <div className="absolute inset-0 bg-tactical-grid opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Area: Logo, Live Time, Return to Top */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6">
           {/* Logo & Brand Identity */}
           <a
             href="/"

@@ -14,18 +14,18 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenGameModa
   return (
     <section
       id="final-cta"
-      className="relative w-full bg-white text-zinc-900 py-10 sm:py-16 px-6 sm:px-12 select-none overflow-hidden"
+      className="relative w-full bg-white text-zinc-900 py-8 sm:py-12 px-6 sm:px-12 select-none overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         {/* Luxury High-Contrast Closing Card - Compact & Balanced */}
-        <div className="relative rounded-3xl bg-zinc-950 text-white overflow-hidden p-6 sm:p-10 lg:p-12 shadow-xl shadow-zinc-950/15">
+        <div className="relative rounded-3xl bg-zinc-950 text-white overflow-hidden p-6 sm:p-8 lg:p-10 shadow-xl shadow-zinc-950/15">
           {/* Subtle Ambient Radial Glows */}
           <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] bg-blue-500/10 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[120px] bg-rose-500/10 pointer-events-none" />
           <div className="absolute inset-0 bg-tactical-grid opacity-10 pointer-events-none" />
 
           {/* Top Meta Line */}
-          <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4 mb-6 sm:mb-8">
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-3 mb-4 sm:mb-6">
             <div className="flex items-center gap-2.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="font-mono text-xs uppercase tracking-widest text-white/60 font-semibold">

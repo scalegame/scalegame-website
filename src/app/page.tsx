@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { ClientProofSection } from "@/components/sections/ClientProofSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { ChooseGameSection } from "@/components/sections/ChooseGameSection";
 import { ServicesLevelsSection } from "@/components/sections/ServicesLevelsSection";
@@ -37,10 +38,13 @@ export default function Home() {
       {/* SECTION 04 — GROWTH METHODOLOGY (PHILOSOPHY) */}
       <PhilosophySection />
 
-      {/* SECTION 05 — WHO WE WORK WITH (INDUSTRY CLOUD) */}
+      {/* SECTION 05 — WHO WE WORK WITH (INDUSTRY CLOUD / BUILT FOR EVERY MARKET) */}
       <IndustriesSection />
 
-      {/* SECTION 06 — FINAL EXPERIENCE (GET STARTED CTA) */}
+      {/* SECTION 06 — TRUSTED CLIENTS */}
+      <ClientProofSection />
+
+      {/* SECTION 07 — FINAL EXPERIENCE (GET STARTED CTA) */}
       <FinalCtaSection onOpenGameModal={() => setModalOpen(true)} />
 
       {/* FOOTER */}
